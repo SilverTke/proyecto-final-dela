@@ -1,0 +1,9 @@
+@use "../palette";
+
+.text-404 {
+    @include palette.dark {
+        color: palette.t("error");
+    }
+    color: palette.t("error");
+    font-size: 6rem;
+}

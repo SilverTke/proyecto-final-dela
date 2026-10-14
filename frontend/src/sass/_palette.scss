@@ -1,0 +1,20 @@
+@use "sass:map";
+@use "sass:color";
+$palette: (
+default: (main_background:#fafafa, error: #dc4765),
+dark: (main_background: #121212, error:#dc4765)
+);
+
+$theme: "default";
+
+@mixin dark {
+    @media (prefers-color-scheme: dark) {
+        $theme: "dark" !global;
+        @content
+    }
+}
+
+@function t($key) {
+    $theme-map: map.get($palette, $theme);
+    @return map.get($theme-map, $key);
+}

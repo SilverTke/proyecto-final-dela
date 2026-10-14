@@ -1,0 +1,14 @@
+@use "palette";
+@use "sass:color";
+
+nav {
+    background-color: color.adjust(palette.t("main_background"), $lightness: -5%);
+    @include palette.dark {
+       background-color: color.adjust(palette.t("main_background"), $lightness: 5%);
+    }
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 20dvw;
+    height: 100dvh;
+}
